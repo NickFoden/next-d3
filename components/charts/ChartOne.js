@@ -61,7 +61,20 @@ async function drawLineChart() {
     .x(d => xScale(xAccessor(d)))
     .y(d => yScale(yAccessor(d)));
 
-  const line = bounds.append("path").attr("d", lineGenerator(dataset));
+  const line = bounds
+    .append("path")
+    .attr("d", lineGenerator(dataset))
+    .attr("fill", "none")
+    .attr("stroke", "#af9358")
+    .attr("stroke-width", 2);
+
+  const yAxisGenerator = d3.axisLeft().scale(yScale);
+  const yAxis = bounds.append("g").call(yAxisGenerator);
+  const xAxisGenerator = d3.axisBottom().scale(xScale);
+  const xAxis = bounds
+    .append("g")
+    .call(xAxisGenerator)
+    .style("transform", `translateY(${dimensions.boundedHeight}px)`);
 }
 
 export default drawLineChart;

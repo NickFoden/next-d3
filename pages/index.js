@@ -20,6 +20,7 @@ const Home = () => {
       <div className="hero">
         <h1 className="title">Next D3</h1>
       </div>
+      <h2>NYC High Temps 2019 Chart</h2>
       <div id="wrapper"></div>
       <style jsx>{`
         .hero {
@@ -35,6 +36,9 @@ const Home = () => {
         }
         .title {
           text-align: center;
+        }
+        h2 {
+          margin-left: 25px;
         }
       `}</style>
     </div>
