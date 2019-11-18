@@ -36,6 +36,32 @@ async function drawLineChart() {
       "transform",
       `translate(${dimensions.margin.left}px, ${dimensions.margin.top}px)`
     );
+
+  const yScale = d3
+    .scaleLinear()
+    .domain(d3.extent(dataset, yAccessor))
+    .range([dimensions.boundedHeight, 0]);
+
+  const freezingTemperaturePlacement = yScale(32);
+  const freezingTemperatures = bounds
+    .append("rect")
+    .attr("x", 0)
+    .attr("width", dimensions.boundedWidth)
+    .attr("y", freezingTemperaturePlacement)
+    .attr("height", dimensions.boundedHeight - freezingTemperaturePlacement)
+    .attr("fill", "#e0f3f3");
+
+  const xScale = d3
+    .scaleTime()
+    .domain(d3.extent(dataset, xAccessor))
+    .range([0, dimensions.boundedWidth]);
+
+  const lineGenerator = d3
+    .line()
+    .x(d => xScale(xAccessor(d)))
+    .y(d => yScale(yAccessor(d)));
+
+  const line = bounds.append("path").attr("d", lineGenerator(dataset));
 }
 
 export default drawLineChart;
