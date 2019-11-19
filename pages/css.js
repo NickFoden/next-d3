@@ -18,6 +18,7 @@ const Home = () => {
         <h1 className="title">Next D3</h1>
       </div>
       <h2>Css</h2>
+      <div className="box" />
       <style jsx>{`
         .hero {
           width: 100%;
@@ -35,6 +36,16 @@ const Home = () => {
         }
         h2 {
           margin-left: 25px;
+        }
+        .box {
+          background: cornflowerblue;
+          height: 100px;
+          width: 100px;
+          transition: transform 1s steps(6), background 2s ease-out;
+        }
+        .box:hover {
+          background: yellowgreen;
+          transform: translateX(30px);
         }
       `}</style>
     </div>
