@@ -24,7 +24,7 @@ const Home = () => {
       <div className="hero">
         <h1 className="title">Next D3</h1>
       </div>
-      <h2>Humidity Histogram</h2>
+      <h2>Histograms</h2>
       <div id="wrapper3"></div>
       <h2>Dew Point X Relative Humidity</h2>
       <div id="wrapper2"></div>
