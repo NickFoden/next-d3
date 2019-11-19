@@ -3,11 +3,13 @@ import Head from "next/head";
 import Nav from "../components/nav";
 import drawLineChart from "../components/charts/ChartOne";
 import drawScatterChart from "../components/charts/ChartTwo";
+import drawBarChart from "../components/charts/ChartThree";
 
 const Home = () => {
   useEffect(() => {
     drawLineChart();
     drawScatterChart();
+    drawBarChart();
   });
 
   return (
@@ -22,6 +24,8 @@ const Home = () => {
       <div className="hero">
         <h1 className="title">Next D3</h1>
       </div>
+      <h2>Humidity Histogram</h2>
+      <div id="wrapper3"></div>
       <h2>Dew Point X Relative Humidity</h2>
       <div id="wrapper2"></div>
       <h2>NYC High Temps 2019 Chart</h2>
