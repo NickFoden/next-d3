@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Head from "next/head";
 import Nav from "../components/nav";
+import animateCircle from "../components/animations/circle";
 
 const Home = () => {
   useEffect(() => {}, []);
@@ -18,7 +19,18 @@ const Home = () => {
         <h1 className="title">Next D3</h1>
       </div>
       <h2>Css</h2>
+      <button onClick={() => animateCircle()}>Animate the Circle</button>
+      <br />
+      <br />
+      <h4>Hover on the div for 12 steps transition</h4>
+      <br />
       <div className="box" />
+      <br />
+      <br />
+      <br />
+      <svg>
+        <circle cx="50" cy="50" r="50" id="circle2" />
+      </svg>
       <style jsx>{`
         .hero {
           width: 100%;
@@ -41,11 +53,14 @@ const Home = () => {
           background: cornflowerblue;
           height: 100px;
           width: 100px;
-          transition: transform 1s steps(6), background 2s ease-out;
+          transition: transform 1s steps(12), background 2s ease-out;
         }
         .box:hover {
           background: yellowgreen;
           transform: translateX(30px);
+        }
+        svg {
+          width: 100vw;
         }
       `}</style>
     </div>
