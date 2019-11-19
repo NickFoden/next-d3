@@ -8,6 +8,11 @@ const Nav = () => (
           <a>Home</a>
         </Link>
       </li>
+      <li>
+        <Link href="/css">
+          <a>CSS</a>
+        </Link>
+      </li>
     </ul>
 
     <style jsx>{`
