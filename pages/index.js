@@ -10,7 +10,7 @@ const Home = () => {
     drawLineChart();
     drawScatterChart();
     drawBarChart();
-  });
+  }, []);
 
   return (
     <div>
