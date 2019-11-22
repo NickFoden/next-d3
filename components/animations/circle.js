@@ -1,7 +1,6 @@
 import * as d3 from "d3";
 
 const animateCircle = () => {
-  console.log("hey");
   const cool = d3
     .select("#circle2")
     .attr("cx", 50)
